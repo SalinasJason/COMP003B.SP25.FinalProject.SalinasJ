@@ -1,3 +1,9 @@
+/*
+ * Author: Jason Salinas
+ * Course: COMP-003B-L01
+ * Faculty: Jonathan Cruz
+ * Purpose: Final Project
+ */
 namespace COMP003B.SP25.FinalProject.SalinasJ
 {
     public class Program
