@@ -22,7 +22,20 @@ namespace COMP003B.SP25.FinalProject.SalinasJ
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
 
+            // Configure Swagger
+            builder.Services.AddControllersWithViews();
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+
             var app = builder.Build();
+
+            // Configure Swagger
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
