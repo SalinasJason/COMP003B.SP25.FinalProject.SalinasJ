@@ -36,6 +36,19 @@
         </dd>
     </dl>
 </div>
+
+<!-- Displays the events that a organzier has Organized -->
+<div class="col-md-4">
+    <h4>Events Organized</h4>
+    <ul>
+        @foreach (var eventItem in ViewBag.Events)
+        {
+            <li>@eventItem.Title</li>
+        }
+
+    </ul>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.OrganizerId">Edit</a> |
     <a asp-action="Index">Back to List</a>
