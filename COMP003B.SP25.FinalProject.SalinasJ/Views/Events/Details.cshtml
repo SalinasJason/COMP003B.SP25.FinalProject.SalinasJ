@@ -36,6 +36,18 @@
         </dd>
     </dl>
 </div>
+
+<!-- Diplays the Organizers name, email and phone number -->
+<div class="col-md-4">
+    <h4>Organizers</h4>
+    <ul>
+        @foreach (var organizer in ViewBag.Organizers)
+        {
+            <li>@organizer.Name <br /> Email: @organizer.Email <br /> Phone Number: @organizer.PhoneNumber</li>
+        }
+    </ul>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.EventId">Edit</a> |
     <a asp-action="Index">Back to List</a>

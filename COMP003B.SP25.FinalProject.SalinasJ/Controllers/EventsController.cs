@@ -40,6 +40,11 @@ namespace COMP003B.SP25.FinalProject.SalinasJ.Controllers
                 return NotFound();
             }
 
+            // Gets the organizers names and contact info
+            ViewBag.Organizers = await (from ed in _context.EventDetails
+                                        join o in _context.Organizers on ed.OrganizerId equals o.OrganizerId
+                                        where ed.EventId == id
+                                        select o).ToListAsync();  
             return View(@event);
         }
 
