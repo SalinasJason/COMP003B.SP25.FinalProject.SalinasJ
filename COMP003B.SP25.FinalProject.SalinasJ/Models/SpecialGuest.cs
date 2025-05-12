@@ -18,6 +18,10 @@ namespace COMP003B.SP25.FinalProject.SalinasJ.Models
         [Phone]
         public string PhoneNumber { get; set; }
 
+        [Required]
+        [StringLength(250)]
+        public string Bio { get; set; }
+
         public virtual ICollection<EventDetail>? EventDetails { get; set; }
     }
 }
