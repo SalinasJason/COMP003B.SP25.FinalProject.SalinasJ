@@ -51,10 +51,10 @@ namespace COMP003B.SP25.FinalProject.SalinasJ.Controllers
         // GET: EventDetails/Create
         public IActionResult Create()
         {
-            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "Date");
-            ViewData["OrganizerId"] = new SelectList(_context.Organizers, "OrganizerId", "Email");
-            ViewData["SpecialGuestId"] = new SelectList(_context.SpecialGuests, "SpecialGuestId", "Bio");
-            ViewData["VenueId"] = new SelectList(_context.Venues, "VenueId", "Location");
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "Title");
+            ViewData["OrganizerId"] = new SelectList(_context.Organizers, "OrganizerId", "Name");
+            ViewData["SpecialGuestId"] = new SelectList(_context.SpecialGuests, "SpecialGuestId", "Name");
+            ViewData["VenueId"] = new SelectList(_context.Venues, "VenueId", "Name");
             return View();
         }
 
@@ -91,10 +91,10 @@ namespace COMP003B.SP25.FinalProject.SalinasJ.Controllers
             {
                 return NotFound();
             }
-            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "Date", eventDetail.EventId);
-            ViewData["OrganizerId"] = new SelectList(_context.Organizers, "OrganizerId", "Email", eventDetail.OrganizerId);
-            ViewData["SpecialGuestId"] = new SelectList(_context.SpecialGuests, "SpecialGuestId", "Bio", eventDetail.SpecialGuestId);
-            ViewData["VenueId"] = new SelectList(_context.Venues, "VenueId", "Location", eventDetail.VenueId);
+            ViewData["EventId"] = new SelectList(_context.Events, "EventId", "Title", eventDetail.EventId);
+            ViewData["OrganizerId"] = new SelectList(_context.Organizers, "OrganizerId", "Name", eventDetail.OrganizerId);
+            ViewData["SpecialGuestId"] = new SelectList(_context.SpecialGuests, "SpecialGuestId", "Name", eventDetail.SpecialGuestId);
+            ViewData["VenueId"] = new SelectList(_context.Venues, "VenueId", "Name", eventDetail.VenueId);
             return View(eventDetail);
         }
 
