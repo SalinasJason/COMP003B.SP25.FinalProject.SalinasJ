@@ -48,6 +48,9 @@ namespace COMP003B.SP25.FinalProject.SalinasJ
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            // Custom Middleware
+            app.UseMiddleware<COMP003B.SP25.FinalProject.SalinasJ.Middleware.RequestTimingMiddleware>();
+
             app.UseRouting();
 
             app.UseAuthorization();
