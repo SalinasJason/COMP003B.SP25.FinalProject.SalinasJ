@@ -1,8 +1,8 @@
 /*
  * Author: Jason Salinas
- * Course: COMP-003B-L01
+ * Course: COMP-003B: ASP.NET Core
  * Faculty: Jonathan Cruz
- * Purpose: Final Project
+ * Purpose: Final project synthesizing MVC, Web API, EF Core, and middleware
  */
 using COMP003B.SP25.FinalProject.SalinasJ.Data;
 using Microsoft.EntityFrameworkCore;
