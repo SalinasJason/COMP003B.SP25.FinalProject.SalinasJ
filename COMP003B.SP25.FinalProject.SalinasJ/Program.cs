@@ -4,6 +4,9 @@
  * Faculty: Jonathan Cruz
  * Purpose: Final Project
  */
+using COMP003B.SP25.FinalProject.SalinasJ.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace COMP003B.SP25.FinalProject.SalinasJ
 {
     public class Program
@@ -14,6 +17,10 @@ namespace COMP003B.SP25.FinalProject.SalinasJ
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Database context
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+               options.UseSqlServer("Name=ConnectionStrings:DefaultConnection"));
 
             var app = builder.Build();
 
